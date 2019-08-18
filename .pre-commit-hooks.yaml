@@ -1,21 +1,23 @@
 -   id: fmt
     name: fmt
     description: Format files with rustfmt.
-    entry: rustfmt --
+    entry: cargo fmt --
     language: system
-    files: \.rs$
-    args: []
+    types: [rust]
+    minimum_pre_commit_version: 1.10.0
 -   id: cargo-check
     name: cargo check
     description: Check the package for errors.
     entry: cargo check
     language: system
-    files: \.rs$
+    types: [rust]
     pass_filenames: false
+    minimum_pre_commit_version: 1.10.0
 -   id: clippy
     name: clippy
     description: Lint rust sources
     entry: cargo clippy -- -D warnings
     language: system
-    files: \.rs$
+    types: [rust]
     pass_filenames: false
+    minimum_pre_commit_version: 1.10.0
